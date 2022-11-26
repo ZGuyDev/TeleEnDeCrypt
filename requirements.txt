@@ -1,0 +1,2 @@
+aiogram==2.18
+AES-Encryptor==2.0
