@@ -31,7 +31,7 @@ async def get_decryption_key(message: types.Message, state: FSM_Decryption):
         async with state.proxy() as proxy:
             proxy["key"] = hash_key(file_unique_id)
     elif message.content_type is types.ContentType.VOICE:
-        file_unique_id = message.sticker.file_unique_id
+        file_unique_id = message.voice.file_unique_id
         async with state.proxy() as proxy:
             proxy["key"] = hash_key(file_unique_id)
     elif message.content_type is types.ContentType.LOCATION:
